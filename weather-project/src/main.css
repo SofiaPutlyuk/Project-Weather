@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .mobile-container {
   width: 393px;
   height: 50px;
@@ -179,4 +180,177 @@
 }
 .button-delete {
   display: none;
+}
+
+.container-banner {
+  background-image: url("C:/Users/Owner/OneDrive/Документи/GitHub/Project-Weather/weather-project/src/images/background-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.text-banner {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  text-align: center;
+  color: #FFF;
+}
+
+.dash {
+  width: 80px;
+  border: 2px solid #FFF;
+  transform: rotate(90deg);
+}
+
+.description-text {
+  font-family: "Montserrat";
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 13px;
+  text-align: left;
+  color: #FFF;
+}
+
+.button-weather {
+  background-color: #FFB36C;
+  border-radius: 0px 5px 5px 0px;
+  border-left: 2px solid #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  height: 15px;
+}
+
+.banner-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.banner-input {
+  border-radius: 5px;
+  background-color: #D9D9D9;
+  padding-left: 10px;
+  width: 173px;
+  height: 15px;
+  border: none;
+}
+
+.banner-content {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+}
+
+.container-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner-subtitle {
+  font-family: "Montserrat";
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
+  text-align: left;
+  width: 136px;
+  height: 36px;
+  color: #FFF;
+}
+
+.banner-date {
+  color: #FFF;
+  font-family: "Montserrat";
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
+  text-align: left;
+}
+
+.container-element-mobile {
+  display: none;
+}
+
+.icon-laptop {
+  display: none;
+}
+
+.icon-tablet {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .container-banner {
+    background-image: url("C:/Users/Owner/OneDrive/Документи/GitHub/Project-Weather/weather-project/src/images/background-tablet.png");
+  }
+  .container-element {
+    display: none;
+  }
+  .container-element-mobile {
+    display: flex;
+    align-items: center;
+  }
+  .banner-input {
+    width: 402px;
+    height: 27px;
+  }
+  .button-weather {
+    width: 28px;
+    height: 27px;
+  }
+  .banner-content {
+    gap: 100px;
+  }
+  .dash {
+    width: 110px;
+  }
+  .banner-subtitle {
+    font-family: "Montserrat";
+    font-size: 14px;
+    line-height: 17px;
+    width: 172px;
+    height: 68px;
+  }
+  .banner-date {
+    font-size: 14px;
+  }
+  .text-banner {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .icon-mobile {
+    display: none;
+  }
+  .icon-tablet {
+    display: block;
+  }
+}
+@media (min-width: 1440px) {
+  .container-banner {
+    background-image: url("C:/Users/Owner/OneDrive/Документи/GitHub/Project-Weather/weather-project/src/images/background-laptop.png");
+  }
+  .banner-input {
+    width: 625px;
+    height: 42px;
+  }
+  .dash {
+    width: 144px;
+  }
+  .button-weather {
+    width: 45px;
+    height: 42px;
+  }
+  .icon-laptop {
+    display: block;
+  }
+  .icon-tablet {
+    display: none;
+  }
 }
