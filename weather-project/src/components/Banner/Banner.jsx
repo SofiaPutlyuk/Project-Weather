@@ -1,6 +1,7 @@
 import iconMobile from '../../svg/search-mobile.svg'
 import iconTablet from '../../svg/search-tablet.svg'
 import iconLaptop from '../../svg/search-laptop.svg'
+import { SearchInfo } from './SearchInfo'
 export const Banner = () => {
     return (
         <div className="container-banner">
@@ -31,7 +32,7 @@ export const Banner = () => {
           {/** */}
           <div className="banner-search">
             <input type="text" placeholder="Search location..."  className='banner-input'/>
-            <button className="button-weather">
+            <button className="button-weather" onClick={SearchInfo}>
              <img src={iconMobile} alt="search-icon" className='icon-mobile'/>
              <img src={iconTablet} alt="search-icon" className='icon-tablet'/>
              <img src={iconLaptop} alt="search-icon" className='icon-laptop'/>
