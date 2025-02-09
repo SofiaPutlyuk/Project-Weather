@@ -354,3 +354,87 @@
     display: none;
   }
 }
+footer {
+  width: 100%;
+  display: flex;
+  background-color: #FFB36C;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  height: 212px;
+}
+
+.text-address {
+  font-family: "Montserrat Alternates";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+.text-address__street {
+  font-size: 8px;
+  width: 62px;
+  height: 30px;
+}
+
+.logo-footer-mobile {
+  margin-top: 20px;
+}
+
+.logo-footer-tablet {
+  display: none;
+}
+
+.icon-container {
+  display: flex;
+  gap: 10px;
+}
+
+.text-contact {
+  font-family: "Montserrat Alternates";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+}
+
+.element-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 60px;
+}
+
+.logo-footer-laptop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  footer {
+    height: 138px;
+    flex-direction: row;
+  }
+  .logo-footer-tablet {
+    display: block;
+  }
+  .logo-footer-mobile {
+    display: none;
+  }
+  .logo-footer-laptop {
+    display: none;
+  }
+}
+@media (min-width: 1440px) {
+  footer {
+    height: 179px;
+  }
+  .footer-text {
+    width: 92px;
+    height: 75px;
+  }
+  .logo-footer-tablet {
+    display: none;
+  }
+  .logo-footer-laptop {
+    display: block;
+  }
+}
