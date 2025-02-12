@@ -1,9 +1,36 @@
+import React, { useEffect } from "react";
 import iconMobile from '../../svg/search-mobile.svg'
 import iconTablet from '../../svg/search-tablet.svg'
 import iconLaptop from '../../svg/search-laptop.svg'
-import { SearchInfo } from './SearchInfo'
+import  Cards  from "../Cards/InfoCards";
+const API_KEY = 'c899df01a007e998373f0576e8f261c7'
+
 export const Banner = () => {
+  const [city, setCity] = React.useState("");
+  const [weather, setWeather] = React.useState(null);
+  useEffect(() => {
+    const savedWeather = localStorage.getItem("weatherData");
+    if (savedWeather) {
+      setWeather(JSON.parse(savedWeather));
+    }
+  }, []);
+  const fetchWeather = () => {
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`)
+          .then((response) => response.json())
+          .then((info) => {
+              if (info) {
+                setWeather(info);
+                localStorage.setItem("weatherData", JSON.stringify(info)); 
+                console.log(info)
+              } else {
+                  console.error("City data not found:", info);
+              }
+          })
+          .catch((error) => console.error("Error fetching weather data:", error));
+  };
+
     return (
+      <>
         <div className="container-banner">
         <div className="banner-content">
           <h1 className="text-banner">Weather dashboard</h1>
@@ -31,14 +58,16 @@ export const Banner = () => {
           </div>
           {/** */}
           <div className="banner-search">
-            <input type="text" placeholder="Search location..."  className='banner-input'/>
-            <button className="button-weather" onClick={SearchInfo}>
+            <input type="text" placeholder="Search location..."  className='banner-input'  value={city} onChange={(e) => setCity(e.target.value)}/>
+            <button className="button-weather" onClick={fetchWeather}>
              <img src={iconMobile} alt="search-icon" className='icon-mobile'/>
              <img src={iconTablet} alt="search-icon" className='icon-tablet'/>
              <img src={iconLaptop} alt="search-icon" className='icon-laptop'/>
             </button>
           </div>
         </div>
-      </div>
+        </div>
+        {weather && <Cards weather={weather} />}
+      </>
     )
 }
