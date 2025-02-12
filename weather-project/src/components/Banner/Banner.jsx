@@ -3,6 +3,7 @@ import iconMobile from '../../svg/search-mobile.svg'
 import iconTablet from '../../svg/search-tablet.svg'
 import iconLaptop from '../../svg/search-laptop.svg'
 import  Cards  from "../Cards/InfoCards";
+import Section from "../Section/Section";
 const API_KEY = 'c899df01a007e998373f0576e8f261c7'
 
 export const Banner = () => {
@@ -68,6 +69,7 @@ export const Banner = () => {
         </div>
         </div>
         {weather && <Cards weather={weather} />}
+        {weather && <Section character={weather} />}
       </>
     )
 }
